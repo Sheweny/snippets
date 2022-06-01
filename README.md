@@ -1,8 +1,6 @@
-# Sheweny Snippets v0.0.4
+# Sheweny Snippets
 
 A simple Visual Studio Code extension that allows you to quickly generate different sheweny components.
-
-To install, click this [Link](https://marketplace.visualstudio.com/items?itemName=notryalevy.sheweny-typescript-snippets).
 
 **This tool is still in development, if you would like to suggest any additions, please contact at Smaug#6739 or Ily#1290 !**
 
@@ -19,6 +17,5 @@ To install, click this [Link](https://marketplace.visualstudio.com/items?itemNam
 | shw:message:contextmenu | Generates a message context menu class |
 
 -----
-*Tool used: [Snippet Generator](https://snippets-generator.app)*
 
 **Enjoy!**
