@@ -8,17 +8,14 @@
 			"module.exports = class ${1:className} extends Event {",
 			"  constructor(client) {",
 			"    super(client, \"${2:eventName}\", {",
-			"      description: \"${3:description}\",",
-			"      once: ${4:false},",
+			"      once: ${3:false},",
 			"    });",
 			"  }",
-			"",
-			"  execute() {",
-			"    console.log(\"Event called !\");",
+			"  ",
+			"  execute(${4:eventParameters}) {",
 			"    ${5:// Your code here}",
 			"  }",
-			"};",
-			""
+			"};"
 		]
 	},
 	"SelectMenu": {
@@ -26,17 +23,16 @@
 		"description": "SelectMenu",
 		"body": [
 			"const { SelectMenu } = require(\"sheweny\");",
-			"  ",
+			"",
 			"module.exports = class ${1:className} extends SelectMenu {",
 			"  constructor(client) {",
 			"    super(client, [\"${2:selectMenuId}\"]);",
 			"  }",
-			"  ",
-			"  async execute(selectMenu) {",
+			"",
+			"  execute(selectMenu) {",
 			"    ${3:// Your code here}",
 			"  }",
-			"};",
-			""
+			"};"
 		]
 	},
 	"Button": {
@@ -50,11 +46,10 @@
 			"    super(client, [\"${2:buttonId}\"]);",
 			"  }",
 			"  ",
-			"  async execute(button) {",
+			"  execute(button) {",
 			"    ${3:// Your code here}",
 			"  }",
-			"};",
-			""
+			"};"
 		]
 	},
 	"Inhibitor": {
@@ -62,24 +57,22 @@
 		"description": "Inhibitor",
 		"body": [
 			"const { Inhibitor } = require(\"sheweny\");",
-			"  ",
-			"module.exports = class ${1:className} extends Inhibitor {",
+			"",
+			"module.exports =  class ${1:className} extends Inhibitor {",
 			"  constructor(client) {",
-			"    super(client, ${2:inhibitorName}, {",
+			"    super(client, \"${2:inhibitorName}\", {",
 			"      type: [\"${3:ALL}\"],",
 			"    });",
 			"  }",
 			"",
 			"  execute(client, interaction) {",
-			"    // Put a guild id",
-			"    return ![\"<guildId>\"].includes(interaction.guildId);",
+			"    return ![\"877090306103840778\"].includes(interaction.guildId!);",
 			"  }",
 			"",
-			"  async onFailure(client, interaction) {",
-			"    await interaction.reply(\"Your guild is blacklisted.\");",
+			"  onFailure(client, interaction) {",
+			"    interaction.reply(\"Your guild is blacklisted.\");",
 			"  }",
-			"};",
-			""
+			"}"
 		]
 	},
 	"SlashCommand": {
@@ -91,21 +84,15 @@
 			"module.exports = class ${1:className} extends Command {",
 			"  constructor(client) {",
 			"    super(client, {",
-			"        type: \"SLASH_COMMAND\",",
-			"        channel: \"${2:GUILD}\",",
-			"        category: \"${3:admin}\",",
-			"        name: \"${4:commandName}\",",
-			"        description: \"${5:description}\",",
-			"      }",
-			"    );",
+			"      type: \"SLASH_COMMAND\",",
+			"      name: \"${2:commandName}\",",
+			"      description: \"${3:commandDescription}\",",
+			"    });",
 			"  }",
-			"",
-			"  async execute(interaction) {",
-			"    ${6:// Your code here}",
-			"    await interaction.reply({ content: \"Pong\" });",
+			"  execute(interaction) {",
+			"    ${4:// Your code here}",
 			"  }",
-			"};",
-			""
+			"};"
 		]
 	},
 	"UserContextMenu": {
@@ -117,21 +104,16 @@
 			"module.exports = class ${1:className} extends Command {",
 			"  constructor(client) {",
 			"    super(client, {",
-			"        type: \"CONTEXT_MENU_USER\",",
-			"        channel: \"${2:GUILD}\",",
-			"        category: \"${3:category}\",",
-			"        name: \"${4:commandName}\",",
-			"        description: \"${5:commandDescription}\",",
-			"      }",
-			"    );",
+			"      type: \"CONTEXT_MENU_USER\",",
+			"      name: \"${2:contextMenuName}\",",
+			"      description: \"${3:contextMenuDescription}\",",
+			"    });",
 			"  }",
 			"",
-			"  async execute(interaction) {",
-			"    ${6:// Your code here}",
-			"    await interaction.reply({ content: \"Pong\" });",
+			"  execute(interaction) {",
+			"    ${4:// Your code here}",
 			"  }",
-			"};",
-			""
+			"};"
 		]
 	},
 	"MessageContextMenu": {
@@ -143,21 +125,16 @@
 			"module.exports = class ${1:className} extends Command {",
 			"  constructor(client) {",
 			"    super(client, {",
-			"        type: \"CONTEXT_MENU_MESSAGE\",",
-			"        channel: \"${2:GUILD}\",",
-			"        category: \"${3:category}\",",
-			"        name: \"${4:commandName}\",",
-			"        description: \"${5:commandDescription}\",",
-			"      }",
-			"    );",
+			"      type: \"CONTEXT_MENU_MESSAGE\",",
+			"      name: \"${2:contextMenuName}\",",
+			"      description: \"${3:contextMenuDescription}\",",
+			"    });",
 			"  }",
 			"",
-			"  async execute(interaction) {",
-			"    ${6:// Your code here}",
-			"    await interaction.reply({ content: \"Pong\" });",
+			"  execute(interaction) {",
+			"    ${4:// Your code here}",
 			"  }",
-			"};",
-			""
+			"};"
 		]
 	},
 	"MessageCommand": {
@@ -169,21 +146,16 @@
 			"module.exports = class ${1:className} extends Command {",
 			"  constructor(client) {",
 			"    super(client, {",
-			"        type: \"MESSAGE_COMMAND\",",
-			"        category: \"${2:category}\",",
-			"        channel: \"${3:GUILD}\",",
-			"        name: \"${4:commandName}\",",
-			"        description: \"${5:commandDescription}\",",
-			"      }",
-			"    );",
+			"      name: \"${2:commandName}\",",
+			"      description: \"${3:commandDescription}\",",
+			"      category: \"${4:commandCategory}\",",
+			"    });",
 			"  }",
 			"",
-			"  async execute(interaction) {",
-			"    ${6:// Your code here}",
-			"    await interaction.reply({ content: \"Pong\" });",
+			"  execute(message, args) {",
+			"    ${5:// Your code here}",
 			"  }",
-			"};",
-			""
+			"};"
 		]
 	}
 }
