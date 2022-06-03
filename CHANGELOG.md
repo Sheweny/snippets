@@ -1,9 +1,6 @@
 # Change Log
 
-All notable changes to the "sheweny-typescript-snippets" extension will be documented in this file.
+**All notable changes to this project will be documented in this file.**
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+# [0.0.5] - June 3, 2022
+- Reworked all snippets to be same as the documentation base.
